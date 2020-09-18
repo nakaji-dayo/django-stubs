@@ -95,7 +95,7 @@ class ForeignKey(ForeignObject[_ST, _GT]):
     def __init__(
         self,
         to: Union[Type[Model], str],
-        on_delete: Callable[..., None],
+        on_delete: Optional[Callable[..., None]] = ...,
         to_field: Optional[str] = ...,
         related_name: Optional[str] = ...,
         related_query_name: Optional[str] = ...,
@@ -140,7 +140,7 @@ class OneToOneField(RelatedField[_ST, _GT]):
     def __init__(
         self,
         to: Union[Type[Model], str],
-        on_delete: Any,
+        on_delete: Any = ...,
         to_field: Optional[str] = ...,
         related_name: Optional[str] = ...,
         related_query_name: Optional[str] = ...,
